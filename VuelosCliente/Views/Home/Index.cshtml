@@ -1,0 +1,68 @@
+﻿@model VuelosCliente.Models.ViewModels.IndexViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="estilos.css" rel="stylesheet" type="text/css">
+    <script src="alert.js" type="text/javascript">
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuelos</title>
+</head>
+<body>
+    <header>
+        <h1>Aerolínea VCWeb</h1>
+        <a href="~/Agregar">Agendar nuevo Vuelo</a>
+    </header>
+    @if (Model!=null && Model.IdCode != 0)
+    {
+        if (Model.IdCode==1)
+        {
+            <div id="alertG">
+                <label>@Model.HttpRespuesta</label>
+                <button id="btnG">&#215;</button>
+            </div>
+        }
+        else
+        {
+            <div id="alertB">
+                <label>@Model.HttpRespuesta</label>
+                <button id="btnB">&#215;</button>
+            </div>
+        }
+    }
+    <h2>Agenda de Vuelos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th class="Hora">Hora</th>
+                <th class="Destino">Destino</th>
+                <th class="Vuelo">Vuelo</th>
+                <th class="Estado">Estado</th>
+                <th class="Acciones" id="thAc" colspan="2">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model!=null && Model.lstVuelos!=null)
+            {
+                @foreach (var v in Model.lstVuelos)
+                {
+                    <tr>
+                        <td class="Hora">@v.Hora</td>
+                        <td class="Destino">@v.Destino</td>
+                        <td class="Vuelo">@v.Vuelo</td>
+                        <td class="Estado">@v.Estado</td>
+                        <td class="Acciones"><a href="~/Editar/@(v.Vuelo)">Editar</a></td>
+                        <td class="Acciones"><a href="~/Eliminar/@(v.Vuelo)">Eliminar</a></td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</body>
+</html>
+

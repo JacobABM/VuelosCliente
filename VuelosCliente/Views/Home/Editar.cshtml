@@ -1,0 +1,71 @@
+﻿@model VuelosCliente.Models.ViewModels.FormularioViewModel
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="~/estilos.css" rel="stylesheet" type="text/css">
+    <script src="alert.js" type="text/javascript">
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuelos</title>
+</head>
+<body>
+   <header>
+        <h1>Aerolínea VCWeb</h1>
+        <a id="btnRegresar" href="~/">Regresar</a>
+    </header>
+    @if (!string.IsNullOrWhiteSpace(Model.Mensaje))
+    {
+        <div id="alertB">
+            <label>@Model.Mensaje</label>
+            <button id="btnB">X</button>
+        </div>
+    }
+    <h2>Editar Vuelo @Model.MiRegistro.Vuelo</h2>
+    <form action="~/" method="post">
+        <label>Hora:</label>
+        <input type="text" name="hora" value="@(Model.MiRegistro.Hora)" /><br />
+        <label>Destino:</label>
+        <input type="text" name="destino" value="@(Model.MiRegistro.Destino)" /><br />
+        <input hidden type="text" name="vuelo" value="@(Model.MiRegistro.Vuelo)" /><br />
+        <label>Estado:</label>
+        <select name="estado">
+            @if (Model.MiRegistro.Estado == "A TIEMPO")
+            {
+                <option selected value="A TIEMPO">A Tiempo</option>
+                <option value="ABORDANDO">Abordando</option>
+                <option value="RETRASADO">Retrasado</option>
+                <option value="CANCELADO">Cancelado</option>
+            }
+            else if (Model.MiRegistro.Estado == "ABORDANDO")
+            {
+                <option value="A TIEMPO">A Tiempo</option>
+                <option selected value="ABORDANDO">Abordando</option>
+                <option value="RETRASADO">Retrasado</option>
+                <option value="CANCELADO">Cancelado</option>
+            }
+            else if (Model.MiRegistro.Estado == "RETRASADO")
+            {
+                <option value="A TIEMPO">A Tiempo</option>
+                <option value="ABORDANDO">Abordando</option>
+                <option selected value="RETRASADO">Retrasado</option>
+                <option value="CANCELADO">Cancelado</option>
+            }
+            else
+            {
+                <option value="A TIEMPO">A Tiempo</option>
+                <option value="ABORDANDO">Abordando</option>
+                <option value="RETRASADO">Retrasado</option>
+                <option selected value="CANCELADO">Cancelado</option>
+            }
+        </select><br />
+        <input value="PUT" hidden name="type">
+        <input type="submit" value="Enviar" />
+    </form>
+</body>
+</html>

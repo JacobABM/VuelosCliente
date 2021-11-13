@@ -1,0 +1,261 @@
+html {
+    background-color: #2B2B2B;
+}
+header {
+    position: relative;
+    margin-top: 10px;
+    height: 100px;
+    background: #E2C275;
+    padding: 10px;
+    display: block;
+}
+header h1{
+    position: absolute;
+    top: 25px;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 45px;
+    color: white;
+    display: block;
+}
+    header a {
+        position: relative;
+        display: block;
+        background-color: #FFCE45;
+        border: 0px;
+        height: 25px;
+        width: 200px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        margin: 10px;
+        font-size: 18px;
+        font-family: 'Segoe UI', sans-serif;
+        float: left;
+        padding: 2px;
+        right: 20px;
+        top: 100px;
+    }
+#alertG, #alertB {
+    position: relative;
+    display: block;
+    background-color: #427A5B;
+    height: 40px;
+    width: 99.7%;
+    margin-bottom: 10px;
+    padding:2px;
+    border: 0px;
+}
+#alertG label, #alertB label{
+    display: block;
+    position: absolute;
+    padding: 10px;
+    font-family: Verdana;
+    font-size: 18px;
+}
+    #alertG button, #alertB button {
+        display: block;
+        position: absolute;
+        float: right;
+        color: white;
+        border-radius: 10px;
+        border: 0px;
+        background-color: #72B896;
+        top: 5px;
+        right: 10px;
+        font-size: 20px;
+        height: 35px;
+        width: 35px;
+    }
+    #alertB button {
+        background-color: #BE4747;
+        border: 0px solid;
+    }
+    #alertG button:hover {
+        cursor: pointer;
+        background-color: #72B896;
+    }
+    #alertG button:active {
+        background: #FFCE45;
+    }
+    #alertB button:hover {
+        cursor: pointer;
+        background-color: #E95280;
+    }
+    #alertB button:active {
+        background: #FFCE45;
+    }
+#alertB {
+    background-color: #A2453D;
+}
+body{
+    width: 80vw;
+    margin: auto;
+}
+h2 {
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+table{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+table a{
+    text-decoration: none;
+    display: block;
+    color: white;
+}
+    table thead {
+        background-color: #F7C873;
+        margin: 0;
+        padding: 2px;
+        border-bottom: 0px;
+        display: block;
+    }
+table thead th{
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+tr{
+    margin: 0;
+    padding: 0;
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: block;
+}
+   tr .Hora { width: 10%; }
+
+tr .Destino{ width: 20%;}
+
+tr .Vuelo{ width: 20%; }
+
+tr .Estado{ width: 25%; }
+
+tr .Acciones{ width: 8%; }
+
+    tr td[value=RETRASADO] {
+        background-color: #B67171;
+    }
+    tr td:nth-child(5) {
+        background-color: #E2C275;
+        border: 0px;
+    }
+    tr td:nth-child(6) {
+        background-color: #A2453D;
+        border: 0px;
+    }
+#thAc {
+    width: 20%;
+    margin-right: 0px;
+}
+
+table tbody tr {
+    margin: 0px;
+    padding: 4px;
+    display: block;
+    margin-bottom: 5px;
+    background: #434343;
+}
+table td{
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    text-align: center;
+}
+
+table tbody tr .Hora {
+    color: #FFCE45;
+}
+
+
+#btnAtras{
+    background: #464f4b;
+}
+
+
+form {
+    position: relative;
+    background: #191A19;
+    border-radius: 10px;
+    width: 30vw;
+    margin: auto;
+    padding: 10px;
+    display: block;
+}
+form label{
+    display: block;
+    color: white;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+    form input[type=text] {
+        border: 0px;
+        background: #F6EABE;
+        width: 97%;
+        font-size: 20px;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    form select {
+        border: 0px;
+        background: #EEEBDD;
+        padding: 7px;
+        width: 99%;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+        form select option {
+            background: #F6EABE;
+        }
+    form input[type=submit] {
+        height: 50px;
+        width: 130px;
+        background-color: #757575;
+        color: white;
+        font-size: 20px;
+        border: 0px;
+        bottom: 5px;
+         position: center;
+    }
+        form input[type=submit]:hover {
+            cursor: pointer;
+            background-color: #FFE5AE;
+        }
+        form input[type=submit]:active {
+            background-color: #222831;
+            cursor: pointer;
+        }
+#btndel, #btndel2 {
+    margin-top: 20px;
+    width: 49%;
+    height: 50px;
+    font-size: 25px;
+    color: white;
+    background-color: #630000;
+    border: 0px;
+    bottom: 5px;
+}
+    #btndel:hover {
+        cursor: pointer;
+        background: #C85C5C;
+    }
+    #btndel:active {
+        cursor: pointer;
+        background: #FFCE45;
+    }
+#btndel2 {
+    background: #2C272E;
+}
+    #btndel2:hover {
+        cursor: pointer;
+        background: #678983;
+    }
+    #btndel2:active {
+        cursor: pointer;
+        background: #FFCE45;
+    }
